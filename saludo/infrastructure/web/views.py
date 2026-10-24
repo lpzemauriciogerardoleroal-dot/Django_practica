@@ -6,13 +6,11 @@ from saludo.application.services.saludar_service import SaludarService
 
 @csrf_exempt
 def saludar_view(request):
-    nombre = "Brandon"
-
-    # Si mandan datos por POST, los lee. Si es por GET, usa "Brandon" por defecto.
+    nombre = "Mauricio"
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            nombre = data.get('nombre', 'Brandon')
+            nombre = data.get('nombre', 'Mauricio')
         except:
             pass
 
